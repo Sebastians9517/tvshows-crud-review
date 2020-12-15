@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the Show page</h1>
+    <%= show.name %>
+    <%= show.seasons %>
+    <%= show.watched %>
+
+    <form action="/shows/<%= show._id %>?_method=PUT" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <label>Seasons:</label>
+        <input type="text" name="seasons">
+        <label>Watched?</label>
+        <button type="submit">Update Show</button>
+    </form>
+
+    <a href="/shows">All Shows</a>
+    <a href="/shows/new">New Show</a>
+    <a href="/">Home page</a>
+</body>
+</html>

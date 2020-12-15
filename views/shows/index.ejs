@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Index</h1>
+    <% shows.forEach((s) => { %>
+        <table>
+            <td>Name: <%= s.name %> </td>
+            <td>Season: <%= s.seasons %> </td>
+            <td>Watched: <%= s.watched %> </td>
+            <td><a href="/shows/<%= s._id %>">Details</a></td>
+            <td><form action="shows/<%= s._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form></td>
+        </table>
+    <% }) %>
+    <a href="/shows/new">New Show</a>
+    <a href="/">Home Page</a>
+</body>
+</html>
